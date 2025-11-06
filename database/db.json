@@ -1,0 +1,16 @@
+
+{
+  "tasks": [
+    { "id": "1", "title": "Shopping", "status": "Active","description":"Just a eye shopping walk","userEmail":"ofentse@gmail.com" },
+    { "id": "2", "title": "Cleaning", "status": "Active","description":"Clean my Room","userEmail":"ofentse@gmail.com" },
+    { "id": "3", "title": "Do Angular", "status": "Active","description":"Practice Reactive forms","userEmail":"ofentse@gmail.com" }
+  
+  
+  ],
+  "users": {
+    "name": "Ofentse",
+    "surname": "Molefe",
+    "email":"ofentse@gmail.com",
+    "password":"12345"
+  }
+}
