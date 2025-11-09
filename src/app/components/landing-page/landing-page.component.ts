@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent {
+isLoginMode: boolean = true;
+
+toggleMode() {
+  this.isLoginMode = !this.isLoginMode; 
+}
 
 }

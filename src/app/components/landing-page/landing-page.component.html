@@ -1,1 +1,59 @@
-<p>landing-page works!</p>
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+  <div class="container mx-auto px-4 py-8">
+    <div class="flex flex-col lg:flex-row items-center justify-between min-h-[80vh]">
+      
+      <!-- Left Side - Descriptive Text -->
+      <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-8">
+        <h1 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
+          Organize Your Life, 
+          <span class="text-blue-600">One Task at a Time</span>
+        </h1>
+        <p class="text-lg text-gray-600 mb-6">
+          Take control of your daily tasks and boost your productivity with our intuitive task management system. 
+          Create, track, and complete your tasks effortlessly.
+        </p>
+        <div class="space-y-4">
+          <div class="flex items-center">
+            <span class="text-green-500 mr-3">✓</span>
+            <span class="text-gray-700">Easy task creation and management</span>
+          </div>
+          <div class="flex items-center">
+            <span class="text-green-500 mr-3">✓</span>
+            <span class="text-gray-700">Real-time updates and notifications</span>
+          </div>
+          <div class="flex items-center">
+            <span class="text-green-500 mr-3">✓</span>
+            <span class="text-gray-700">Secure and reliable data storage</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side - Auth Components -->
+      <div class="lg:w-1/2 w-full max-w-md">
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <!-- Toggle between Login and Register -->
+          <div class="flex border-b mb-6">
+            <button 
+              class="flex-1 py-2 font-medium text-center"
+              [class.text-blue-600]="isLoginMode"
+              [class.text-gray-500]="!isLoginMode"
+              (click)="toggleMode()">
+              Login
+            </button>
+            <button 
+              class="flex-1 py-2 font-medium text-center"
+              [class.text-blue-600]="!isLoginMode"
+              [class.text-gray-500]="isLoginMode"
+              (click)="toggleMode()">
+              Register
+            </button>
+          </div>
+
+          <!-- Dynamic Component Loading -->
+          <app-login *ngIf="isLoginMode"></app-login>
+          <app-register *ngIf="!isLoginMode"></app-register>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
