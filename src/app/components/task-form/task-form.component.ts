@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
+
 import { Task } from 'src/app/models/task.model';
 import { TaskService } from 'src/app/services/task.service';
 
@@ -15,7 +16,8 @@ export class TaskFormComponent implements OnInit {
   isEditMode: boolean = false;
   currentTaskId: number | null = null;
   
-  constructor(private fb: FormBuilder ,private taskService: TaskService,private formGroup: FormGroup) {
+  
+  constructor(private fb: FormBuilder ,private taskService: TaskService) {
     this.taskForm = this.fb.group({
       title: ['', Validators.required],
       status: ['', Validators.required],

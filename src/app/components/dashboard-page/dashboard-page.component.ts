@@ -10,7 +10,8 @@ import { Observer } from 'rxjs';
 })
 export class DashboardPageComponent implements OnInit {
   user$: Observer<any>;
-  task$: Observer<Task[]>;
+  tasks$: Observer<Task[]>;
+  isLoading$: boolean = false;
 
   constructor() {
     // Initialize the observers here or inject services to fetch data
@@ -19,7 +20,7 @@ export class DashboardPageComponent implements OnInit {
       error: (err) => console.error('Error fetching user data:', err),
       complete: () => console.log('User data stream completed')
     };
-    this.task$ = {
+    this.tasks$ = {
       next: (tasks) => console.log('Task data:', tasks),
       error: (err) => console.error('Error fetching task data:', err),
       complete: () => console.log('Task data stream completed')
